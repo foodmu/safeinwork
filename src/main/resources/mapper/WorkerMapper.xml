@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiuheng.mapper.WorkerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jiuheng.entity.Worker">
+        <id column="wid" property="wid" />
+        <result column="wName" property="wName" />
+        <result column="wSex" property="wSex" />
+        <result column="wAge" property="wAge" />
+        <result column="wPhone" property="wPhone" />
+        <result column="wMajor" property="wMajor" />
+        <result column="wUnit" property="wUnit" />
+        <result column="type" property="type" />
+        <result column="workGroupId" property="workGroupId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        wid, wName, wSex, wAge, wPhone, wMajor, wUnit, type, workGroupId
+    </sql>
+
+</mapper>

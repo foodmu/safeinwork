@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiuheng.mapper.UnitandcontextMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jiuheng.entity.Unitandcontext">
+        <id column="uid" property="uid" />
+        <result column="unit" property="unit" />
+        <result column="utype" property="utype" />
+        <result column="uContext" property="uContext" />
+        <result column="uDuty" property="uDuty" />
+        <result column="uLeader" property="uLeader" />
+        <result column="uPhone" property="uPhone" />
+        <result column="pid" property="pid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, unit, utype, uContext, uDuty, uLeader, uPhone, pid
+    </sql>
+
+</mapper>

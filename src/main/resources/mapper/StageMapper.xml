@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiuheng.mapper.StageMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jiuheng.entity.Stage">
+        <id column="sid" property="sid" />
+        <result column="sName" property="sName" />
+        <result column="sGuardian" property="sGuardian" />
+        <result column="sAcceptor" property="sAcceptor" />
+        <result column="fid" property="fid" />
+        <result column="unitandleader" property="unitandleader" />
+        <result column="remark" property="remark" />
+        <result column="rId" property="rId" />
+        <result column="pid" property="pid" />
+        <result column="startTime" property="startTime" />
+        <result column="endTime" property="endTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        sid, sName, sGuardian, sAcceptor, fid, unitandleader, remark, rId, pid, startTime, endTime
+    </sql>
+
+</mapper>

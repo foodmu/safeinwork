@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiuheng.mapper.GroupMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jiuheng.entity.Group">
+        <id column="gid" property="gid" />
+        <result column="gName" property="gName" />
+        <result column="gleader" property="gleader" />
+        <result column="maintenance_once" property="maintenanceOnce" />
+        <result column="maintenance_protect" property="maintenanceProtect" />
+        <result column="maintenance_test" property="maintenanceTest" />
+        <result column="maintenance_transmission" property="maintenanceTransmission" />
+        <result column="commission_once" property="commissionOnce" />
+        <result column="commission_protect" property="commissionProtect" />
+        <result column="commission_test" property="commissionTest" />
+        <result column="assist_number" property="assistNumber" />
+        <result column="sid" property="sid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        gid, gName, gleader, maintenance_once, maintenance_protect, maintenance_test, maintenance_transmission, commission_once, commission_protect, commission_test, assist_number, sid
+    </sql>
+
+</mapper>
