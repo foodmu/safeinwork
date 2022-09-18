@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    name: com.mysql.cj.jdbc.Drive
+    url: jdbc:mysql://124.222.25.138:3307/powergrid
+    username: root
+    password: cmq04551
+
