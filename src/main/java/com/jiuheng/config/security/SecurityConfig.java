@@ -3,6 +3,8 @@ package com.jiuheng.config.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -18,7 +20,8 @@ import javax.annotation.Resource;
  * @Version 1.0
  */
 @Configuration
-public class SecurityConfig {
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Resource
     private MyAccessDeniedHandler myAccessDeniedHandler;
@@ -35,10 +38,9 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-
-        httpSecurity
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
                 .csrf()
                 .disable()
                 .exceptionHandling()
@@ -64,13 +66,12 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         //关闭session
-        httpSecurity.sessionManagement()
+        http.sessionManagement()
                 .maximumSessions(1)
                 .maxSessionsPreventsLogin(true)
                 .and()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-
-        return httpSecurity.build();
     }
+
+
 }

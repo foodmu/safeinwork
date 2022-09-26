@@ -2,6 +2,7 @@ package com.jiuheng.service;
 
 import com.jiuheng.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.jiuheng.util.Result;
 
 /**
  * <p>
@@ -13,4 +14,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
 
+    String login(User user);
+
+    Result register(User user);
 }
+

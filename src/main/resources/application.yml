@@ -7,3 +7,12 @@ spring:
     username: root
     password: cmq04551
 
+jwt:
+  #JWT存储的请求头
+  tokenHeader: Authorization
+  #JWT加密解密使用的密钥
+  secret: yeb-serve
+  #JWT的超期限时间
+  expiration: 604800
+  #JWT负载中拿到的开头
+  tokenHead: Bearer
